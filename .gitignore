@@ -1,0 +1,5 @@
+.env
+*.key
+*.jks
+google-services.json
+GoogleService-Info.plist
