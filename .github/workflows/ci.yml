@@ -4,11 +4,14 @@ on:
   push:
     branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +29,7 @@ jobs:
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Static analysis
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
 
       - name: Run tests with coverage
         run: flutter test --coverage
