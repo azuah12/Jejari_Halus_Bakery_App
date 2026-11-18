@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
+
 import '../widgets/order_type_card.dart';
 
 class OrderTypeScreen extends StatefulWidget {
   const OrderTypeScreen({super.key});
 
   @override
-  State<OrderTypeScreen> createState() =>
-      _OrderTypeScreenState();
+  State<OrderTypeScreen> createState() => _OrderTypeScreenState();
 }
 
 class _OrderTypeScreenState extends State<OrderTypeScreen> {
@@ -30,9 +29,8 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
         ? 'Immediate Order selected'
         : 'Advance Preorder selected';
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -44,15 +42,11 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 430,
-            ),
+            constraints: const BoxConstraints(maxWidth: 430),
             child: SizedBox(
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -60,8 +54,7 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
 
                     // Header
                     Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
                           'JEJARI HALUS · GUEST / 05',
@@ -73,10 +66,7 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
-                            Icons.help_outline,
-                            color: rose,
-                          ),
+                          icon: const Icon(Icons.help_outline, color: rose),
                         ),
                       ],
                     ),
@@ -95,10 +85,7 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
 
                     const Text(
                       'Choose the right kind of sweet moment.',
-                      style: TextStyle(
-                        color: muted,
-                        fontSize: 13,
-                      ),
+                      style: TextStyle(color: muted, fontSize: 13),
                     ),
 
                     const SizedBox(height: 10),
@@ -106,11 +93,9 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
                     // Immediate Order Card
                     OrderTypeCard(
                       title: 'Immediate Order',
-                      description:
-                          'For a little treat, a little sooner.',
+                      description: 'For a little treat, a little sooner.',
                       icon: Icons.shopping_bag_outlined,
-                      isSelected:
-                          selectedOrderType == 'immediate',
+                      isSelected: selectedOrderType == 'immediate',
                       details: const [
                         'Currently available products only',
                         'Shop pickup only — no delivery',
@@ -126,19 +111,16 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
                     // Advance Preorder Card
                     OrderTypeCard(
                       title: 'Advance Preorder',
-                      description:
-                          'Something special, planned with love.',
+                      description: 'Something special, planned with love.',
                       icon: Icons.calendar_month_outlined,
                       badge: 'Plan ahead',
-                      isSelected:
-                          selectedOrderType == 'preorder',
+                      isSelected: selectedOrderType == 'preorder',
                       details: const [
                         'Larger quantities, birthdays and events',
                         'Fulfilment at least TWO DAYS ahead',
                         'Shop pickup or eligible bakery delivery',
                       ],
-                      footer:
-                          'Earliest fulfilment: 2 days after ordering',
+                      footer: 'Earliest fulfilment: 2 days after ordering',
                       onTap: () {
                         selectOrderType('preorder');
                       },
@@ -154,12 +136,10 @@ class _OrderTypeScreenState extends State<OrderTypeScreen> {
                         onPressed: continueOrder,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: green,
-                          foregroundColor:
-                              const Color(0xFF654A50),
+                          foregroundColor: const Color(0xFF654A50),
                           elevation: 0,
                           shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(14),
+                            borderRadius: BorderRadius.circular(14),
                           ),
                         ),
                         child: const Text(

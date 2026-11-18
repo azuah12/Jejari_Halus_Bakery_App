@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class OrderTypeCard extends StatelessWidget {
@@ -100,10 +99,7 @@ class OrderTypeCard extends StatelessWidget {
 
             Text(
               description,
-              style: const TextStyle(
-                color: dark,
-                fontSize: 13,
-              ),
+              style: const TextStyle(color: dark, fontSize: 13),
             ),
 
             const SizedBox(height: 12),
@@ -113,10 +109,7 @@ class OrderTypeCard extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 3),
                 child: Text(
                   '• $detail',
-                  style: const TextStyle(
-                    color: muted,
-                    fontSize: 12,
-                  ),
+                  style: const TextStyle(color: muted, fontSize: 12),
                 ),
               ),
             ),
