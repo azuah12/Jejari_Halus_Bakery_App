@@ -3,3 +3,22 @@
 *.jks
 google-services.json
 GoogleService-Info.plist
+
+# Flutter and Dart generated files
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Android and Gradle generated files
+.gradle/
+**/local.properties
+
+# iOS and macOS generated files
+**/Flutter/ephemeral/
+**/Flutter/Generated.xcconfig
+**/Flutter/flutter_export_environment.sh
+**/Flutter/.last_build_id
